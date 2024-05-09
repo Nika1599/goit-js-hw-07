@@ -37,9 +37,7 @@ function createImageGallery(images) {
     return listItem;
   });
 
-  galleryItems.forEach((item) => {
-    gallery.appendChild(item);
-  });
+  gallery.append(...galleryItems);
 
   document.body.appendChild(gallery);
 }

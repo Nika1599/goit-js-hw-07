@@ -22,16 +22,19 @@ destroyButton.addEventListener("click", () => {
 });
 
 function createBoxes(amount) {
-  boxesContainer.innerHTML = "";
   let size = 30;
+  const boxElements = [];
+
   for (let i = 0; i < amount; i++) {
     const box = document.createElement("div");
     box.style.width = `${size}px`;
     box.style.height = `${size}px`;
     box.style.backgroundColor = getRandomHexColor();
-    boxesContainer.appendChild(box);
+    boxElements.push(box);
     size += 10;
   }
+
+  boxesContainer.append(...boxElements);
 }
 
 function destroyBoxes() {
